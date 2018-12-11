@@ -5,9 +5,11 @@ package com.dongnaoedu;
  * 创建日期：2017/11/16
  * 创建时间: 14:21
  */
-public class PerfermenTest {
+public class PerfermenTest18 {
 
-    /** 执行次数 */
+    /**
+     * 执行次数 ，通过多次加 0 来测试
+     */
     private static final long count = 10000;
 
     public static void main(String[] args) throws InterruptedException {
@@ -26,7 +28,7 @@ public class PerfermenTest {
                 for (long i = 0; i < count; i++) {
                     a += 5;
                 }
-                System.out.println("a="+a);
+                System.out.println("a=" + a);
             }
         });
         thread.start();
@@ -39,6 +41,9 @@ public class PerfermenTest {
         System.out.println("concurrency :" + time + "ms,b=" + b);
     }
 
+    /**
+     * 单线程计算
+     */
     private static void serial() {
         long start = System.currentTimeMillis();
         int a = 0;

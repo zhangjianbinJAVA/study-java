@@ -1,8 +1,5 @@
 package com.dongnaoedu.connectpool;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
 import java.sql.*;
 import java.util.Map;
 import java.util.Properties;
@@ -10,16 +7,21 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
 /**
- * ����ѧԺ-Mark��ʦ
- * �������ڣ�2017/11/15
- * ����ʱ��: 17:06
+ * 动脑学院-Mark老师
+ * 创建日期：2017/11/15
+ * 创建时间: 17:06
+ * 创建数据库连接，工厂模式
  */
 public class ConnectionDriver {
 
-    private static class ConnectionImpl implements Connection{
+    /**
+     * Connection 数据连接的相关接口
+     */
+    private static class ConnectionImpl implements Connection {
 
         @Override
         public Statement createStatement() throws SQLException {
+            System.out.println(Thread.currentThread().getId() + ": select * from user ");
             return null;
         }
 
@@ -51,6 +53,7 @@ public class ConnectionDriver {
         @Override
         public void commit() throws SQLException {
             try {
+                System.out.println(Thread.currentThread().getId() + " : 准备提交数据！！");
                 TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -293,7 +296,7 @@ public class ConnectionDriver {
         }
     }
 
-    public static final Connection getConnectiong(){
+    public static final Connection getConnectiong() {
         return new ConnectionImpl();
     }
 }
