@@ -12,6 +12,8 @@
         <module>thread-base</module>
         <module>thread-atomic</module>
         <module>thread-lock</module>
+        <module>thread-tool</module>
+        <module>thread-pool</module>
     </modules>
 
 

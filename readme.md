@@ -30,7 +30,7 @@
 > 循环CAS：在一个（死）循环【for(;;)】里不断进行CAS操作，直到成功为止（也叫:自旋操作）
 
 
-## Lock(显示锁)和 AQS
+## Lock(显示锁)和 AQS thread-lock
 1. LockTemplete1 lock 锁 模版
 2. RwLockTemplete2  读写锁 模版
 3. Test3 synchronized 锁情况 和 ReentrantReadWriteLock 锁情况 性能比较
@@ -38,6 +38,17 @@
 5. BqTest5 lock 能过通知机制实现有界阻塞队列 测试
 6. TestMyLock6 独占锁和共享锁测试
 
-## 并发容器和并发工具类
+## 并发容器和并发工具类 thread-tool
+1. UseChm1 ConcurrentHashMap.putIfAbsent 方法测试
+2. ConcurrentLinkedQueueTest2 isEmpty()和size()的性能差异
+3. Test3 使用阻塞队列DelayQueue，实现一个定时缓存
+4. ForkJoinWuKong4 forkjoin 框架同步处理任务，有返回结果；大任务，拆分成多个小任务来执行
+5. ForkJoinBaJieAsyn5 forkjoin 框架异步处理任务，无返回结果
+6. CountDownLatchCase6
+7. CyclicBarrriesBase7
+8. SemaphporeCase8
+9. ExchangeCase9
+
+## 线程池 thread-pool
 
 
