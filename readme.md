@@ -50,5 +50,9 @@
 9. ExchangeCase9
 
 ## 线程池 thread-pool
-
+1. TestMyThreadPool1 自定义线程池
+2. UseThreadPool2  jdk线程池使用,ThreadPoolExecutor，Executors
+3. TestSchedule3   ScheduledThreadPoolExecutor 使用
+4. FutureSample4   FutureTask 使用，缺点：当某个使用任务，用时比较短时，也要等待前面任务结果获取了，才能获取后面任务的结果，它只是按加入线程池的顺序返回
+5. CompletionTest5 CompletionService 使用，先完成的必定先被取出。这样就减少了不必要的等待时间。不管它们加入线程池的顺序
 
