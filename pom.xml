@@ -14,6 +14,7 @@
         <module>thread-lock</module>
         <module>thread-tool</module>
         <module>thread-pool</module>
+        <module>thread-safe</module>
     </modules>
 
 
