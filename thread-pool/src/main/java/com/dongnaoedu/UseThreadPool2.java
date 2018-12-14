@@ -2,6 +2,7 @@ package com.dongnaoedu;
 
 import java.util.Random;
 import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 动脑学院-Mark老师
@@ -40,7 +41,15 @@ public class UseThreadPool2 {
         //创建线程池
         ThreadPoolExecutor threadPoolExecutor =
                 new ThreadPoolExecutor(2, 4, 60,
-                        TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(10));
+                        TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(10), new ThreadFactory() {
+                    private final AtomicInteger threadNumber = new AtomicInteger(1);
+
+                    @Override
+                    public Thread newThread(Runnable r) {
+                        Thread thread = new Thread(r, "custom-thread-" + threadNumber.getAndIncrement());
+                        return thread;
+                    }
+                });
 
         for (int i = 0; i <= 5; i++) {
             MyTask task = new MyTask("Task_" + i);
