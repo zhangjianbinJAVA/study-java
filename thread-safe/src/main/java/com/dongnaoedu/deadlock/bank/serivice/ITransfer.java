@@ -10,5 +10,6 @@ import com.dongnaoedu.deadlock.bank.Account;
  */
 public interface ITransfer {
 
+    // 银行转账操作
     void transfer(Account from, Account to, int amount) throws InterruptedException;
 }

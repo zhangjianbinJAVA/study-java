@@ -9,7 +9,7 @@ import java.util.List;
  * 创建时间: 20:06
  * 不安全的发布
  * */
-public class UnsafePublish {
+public class UnsafePublish2 {
     private List<String> list = new ArrayList<>();
 
     /*不安全的发布，将内部的线程不安全的list发布出去了*/

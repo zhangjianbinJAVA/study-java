@@ -15,28 +15,32 @@ public class TryLockTransfer implements ITransfer {
     public void transfer(Account from, Account to, int amount)
             throws InterruptedException {
         Random r = new Random();
-        while(true){
-            if(from.getLock().tryLock()){
-                try{
+        while (true) {
+            if (from.getLock().tryLock()) {// 尝试获取锁
+                try {
                     System.out.println(Thread.currentThread().getName()
-                            +" get from "+from.getName());
+                            + " get from " + from.getName());
 
-                    if(to.getLock().tryLock()){
-                        try{
+                    if (to.getLock().tryLock()) {//尝试获取锁
+                        try {
                             System.out.println(Thread.currentThread().getName()
-                                    +" get to "+to.getName());
+                                    + " get to " + to.getName());
+
                             from.flyMoney(amount);
                             to.addMoney(amount);
+
                             System.out.println(from);
                             System.out.println(to);
                             break;
-                        }finally {
+                        } finally {
+                            // 释放锁
                             to.getLock().unlock();
                         }
                     }
 
-                }finally {
-                   from.getLock().unlock();
+                } finally {
+                    // 释放锁
+                    from.getLock().unlock();
                 }
             }
             Thread.sleep(r.nextInt(5));//防止产生活锁
