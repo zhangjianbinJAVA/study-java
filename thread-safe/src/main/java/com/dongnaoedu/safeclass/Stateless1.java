@@ -9,7 +9,7 @@ import com.dongnaoedu.deadlock.bank.Account;
  * <p>
  * 无状态类:（无成员变量）
  */
-public class Stateless {
+public class Stateless1 {
 
     private final int x = 10;
     private final String y = "dddfd";

@@ -12,6 +12,8 @@ public class Account {
     private long number;
     private final String name;
     private int money;
+
+    // 俱有尝试获取锁的能力
     private final Lock lock = new ReentrantLock();
 
     public Lock getLock() {
@@ -39,11 +41,11 @@ public class Account {
                 '}';
     }
 
-    public void addMoney(int amount){
+    public void addMoney(int amount) {
         money = money + amount;
     }
 
-    public void flyMoney(int amount){
+    public void flyMoney(int amount) {
         money = money - amount;
     }
 }
