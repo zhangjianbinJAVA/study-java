@@ -9,7 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>thread-tool</artifactId>
+    <artifactId>thread</artifactId>
+
+    <modules>
+        <module>thread-base</module>
+        <module>thread-atomic</module>
+        <module>thread-lock</module>
+        <module>thread-tool</module>
+        <module>thread-pool</module>
+        <module>thread-safe</module>
+        <module>thread-project-practice</module>
+    </modules>
 
 
 </project>
